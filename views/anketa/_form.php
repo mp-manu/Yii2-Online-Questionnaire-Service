@@ -12,50 +12,6 @@ use yii\bootstrap4\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <!--    --><? //= $form->field($model, 'age_and_education_id')->textInput() ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'place_of_residence')->textInput(['maxlength' => true]) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'main_occupation_id')->textInput() ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'knowledge_level_id')->textInput() ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'cv_writing_skills')->dropDownList([ 'yes' => 'Yes', 'no' => 'No', 'do_not_know' => 'Do not know', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'computer_skills')->dropDownList([ 'yes' => 'Yes', 'no' => 'No', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'how_often_see_doctor')->textInput(['maxlength' => true]) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'play_sports')->dropDownList([ 'yes' => 'Yes', 'no' => 'No', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'improve_qualifications')->dropDownList([ 'yes' => 'Yes', 'no' => 'No', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'change_profession')->dropDownList([ 'yes' => 'Yes', 'no' => 'No', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'search_training_courses')->dropDownList([ 'yes' => 'Yes', 'no' => 'No', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'taken_edu_courses')->dropDownList([ 'yes' => 'Yes', 'no' => 'No', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'life_skills')->dropDownList([ 'leadership' => 'Leadership', 'making_decisions' => 'Making decisions', 'communication' => 'Communication', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'family_conditions')->dropDownList([ 'yes' => 'Yes', 'no' => 'No', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'famali_depends')->textInput(['maxlength' => true]) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'course_to_like_attend_id')->textInput() ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'go_to_take_course_id')->textInput() ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'most_important_for_checking_course_id')->textInput() ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'attend_paid_courses')->dropDownList([ 'yes' => 'Yes', 'no' => 'No', ], ['prompt' => '']) ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'time_attend_courses_id')->textInput() ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'type_search_courses_id')->textInput() ?>
-    <!---->
-    <!--    --><? //= $form->field($model, 'wishes_suggestions')->textarea(['rows' => 6]) ?>
-
     <?php if (!empty($questions)): $i=0; ?>
         <?php foreach ($questions as $question): $i++; ?>
             <?= $form->field($model, 'question_id[]')->hiddenInput(['value' => $question['id']])->label($i.'. '.$question['lable']) ?>

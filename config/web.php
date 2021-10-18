@@ -50,6 +50,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'answers/view/<uuid>' => '/answers/view',
+                'answers/pdf/<uuid>' => '/answers/pdf'
             ],
         ],
 

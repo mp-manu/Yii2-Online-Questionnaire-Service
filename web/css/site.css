@@ -85,3 +85,36 @@ a.desc:after {
 .navbar-brand{
     color: #FFAE1A!important;
 }
+
+
+page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    padding: 60px 30px 40px 80px;
+    font-family: 'Times New Roman';
+}
+page[size="A4"] {
+    width: 21cm;
+    height: 100cm;
+}
+
+@media print {
+    body, page {
+        margin: 0;
+        box-shadow: 0;
+    }
+}
+.page_title_head{
+    text-align: center!important;
+}
+.page_title{
+    font-style: italic;
+    font-weight: bold;
+    text-align: justify;
+    text-indent: 1.5cm;
+}
+
+

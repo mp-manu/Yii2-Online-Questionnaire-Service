@@ -43,7 +43,7 @@ class Answers extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'uuid' => 'uuid',
+            'uuid' => 'Анонимный пользователь',
             'question_id' => 'Вопрос',
             'option_id' => 'Ответ',
             'status' => 'Статус',

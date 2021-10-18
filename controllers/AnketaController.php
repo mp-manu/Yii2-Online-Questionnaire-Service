@@ -6,6 +6,7 @@ use app\models\Anketa;
 use app\models\AnketaSearch;
 use app\models\Answers;
 use app\models\Options;
+use app\models\OptionsSearch;
 use app\models\Question;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
@@ -34,35 +35,6 @@ class AnketaController extends Controller
                 ],
             ]
         );
-    }
-
-    /**
-     * Lists all Anketa models.
-     * @return mixed
-     */
-    public function actionIndex($password = 0)
-    {
-        if(\Yii::$app->user->isGuest) throw new HttpException(403/*or any code*/, 'Доступ запрешен!'/*or any message*/);
-        $searchModel = new AnketaSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
-     * Displays a single Anketa model.
-     * @param int $id ID
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
     }
 
     /**
@@ -113,56 +85,6 @@ class AnketaController extends Controller
         ]);
     }
 
-    /**
-     * Updates an existing Anketa model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id ID
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($id)
-    {
-        if(\Yii::$app->user->isGuest) throw new HttpException(403/*or any code*/, 'Доступ запрешен!'/*or any message*/);
-        $model = $this->findModel($id);
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing Anketa model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id ID
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($id)
-    {
-        if(\Yii::$app->user->isGuest) throw new HttpException(403/*or any code*/, 'Доступ запрешен!'/*or any message*/);
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
-
-    /**
-     * Finds the Anketa model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id ID
-     * @return Anketa the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = Anketa::findOne($id)) !== null) {
-            return $model;
-        }
-
-        throw new NotFoundHttpException('The requested page does not exist.');
-    }
 
     protected function getGuid()
     {

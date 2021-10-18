@@ -40,9 +40,11 @@ AppAsset::register($this);
             ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'Пройти опрос', 'url' => ['/anketa/create']],
 
+
             !Yii::$app->user->isGuest ? ['label' => 'Вопросы', 'url' => ['/question']] : '',
             !Yii::$app->user->isGuest ? ['label' => 'Варианты', 'url' => ['/options']] : '',
-
+            !Yii::$app->user->isGuest ? ['label' => 'Результаты', 'url' => ['/answers']] : '',
+            !Yii::$app->user->isGuest ? ['label' => 'Статистика', 'url' => ['/stat']] : '',
             ['label' => 'О нас', 'url' => ['/site/about']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Вход', 'url' => ['/site/login']]
