@@ -98,7 +98,7 @@ page {
 }
 page[size="A4"] {
     width: 21cm;
-    height: 100cm;
+    height: 115cm;
 }
 
 @media print {

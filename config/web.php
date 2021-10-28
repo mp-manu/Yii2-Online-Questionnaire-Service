@@ -51,7 +51,8 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'answers/view/<uuid>' => '/answers/view',
-                'answers/pdf/<uuid>' => '/answers/pdf'
+                'answers/pdf/<uuid>' => '/answers/pdf',
+                'export/to-pdf/<uuid>' => '/export/to-pdf'
             ],
         ],
 

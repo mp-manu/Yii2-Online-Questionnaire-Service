@@ -13,15 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 $cyr = array('А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У',
     'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я');
 ?>
-<style>
-    body {
-        background: rgb(204, 204, 204);
-    }
-    .choosed{
-        font-weight: bold;
-        text-decoration: underline;
-    }
-</style>
 
 <page size="A4">
     <b>
@@ -56,8 +47,4 @@ $cyr = array('А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', '
         ?>
     <h6 class="font-weight-bold text-center">БЛАГОДАРИМ ВАС ЗА УЧАСТИЕ В ОПРОСЕ!</h6>
 </page>
-
-<center>
-    <a href="/export/to-pdf/<?= $uuid ?>" class="btn btn-warning">Экпорт в PDF</a>
-</center>
 
