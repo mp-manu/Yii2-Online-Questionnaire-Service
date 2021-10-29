@@ -52,8 +52,12 @@ $config = [
             'rules' => [
                 'answers/view/<uuid>' => '/answers/view',
                 'answers/pdf/<uuid>' => '/answers/pdf',
-                'export/to-pdf/<uuid>' => '/export/to-pdf'
+                'export/to-pdf/<uuid>' => '/export/to-pdf',
+                'export/to-excel/<uuid>' => '/export/to-excel'
             ],
+        ],
+        'excel'=>[
+            'class'=>'app\components\ExportToExcel',
         ],
 
     ],

@@ -7,8 +7,7 @@ $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 if (!empty($data)) {
 ?>
-    <a href="/export/to-excel-statistics" class="btn btn-success">Экпорт в Excel</a>
-    <table class="table table-bordered table-responsive table-hover" style="margin-top: 10px">
+    <table class="table table-bordered table-responsive table-hover">
         <thead>
         <tr>
             <th scope="col">№</th>

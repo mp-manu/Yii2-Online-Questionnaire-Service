@@ -15,17 +15,13 @@ $cyr = array('А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', '
 ?>
 <style>
     body {
-        background: rgb(204, 204, 204);
+        font-family: 'Times New Roman';
     }
     .choosed{
         font-weight: bold;
         text-decoration: underline;
     }
 </style>
-<center>
-    <a href="/export/to-pdf/<?= $uuid ?>" class="btn btn-warning">Экпорт в PDF</a>
-    <a href="/export/to-excel/<?= $uuid ?>" class="btn btn-success">Экпорт в Excel</a>
-</center><br>
 <page size="A4">
     <b>
         <div class="page_title_head">Уважаемый участник опроса!</div>
@@ -59,6 +55,4 @@ $cyr = array('А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', '
         ?>
     <h6 class="font-weight-bold text-center">БЛАГОДАРИМ ВАС ЗА УЧАСТИЕ В ОПРОСЕ!</h6>
 </page>
-
-
 
