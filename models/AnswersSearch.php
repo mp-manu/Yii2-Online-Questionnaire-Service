@@ -40,7 +40,7 @@ class AnswersSearch extends Answers
      */
     public function search($params)
     {
-        $query = Answers::find()->select('uuid, id')->groupBy('uuid');
+        $query = Answers::find()->select('uuid, id, created_at')->orderBy('created_at DESC')->groupBy('uuid');
 
         // add conditions that should always apply here
 

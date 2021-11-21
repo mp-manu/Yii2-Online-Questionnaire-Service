@@ -59,19 +59,36 @@ class AnketaController extends Controller
 //           echo '<pre>';
 //           print_r($answersData);
 //           die();
-
+           $created_at = date('Y-m-d H:i:s');
            foreach ($answersData as $question_id => $answer){
                if(empty($answer)) continue;
-                $result = new Answers();
-               $result->uuid = $uuid;
-               $result->question_id = $question_id;
-               if(is_numeric($answer)){
-                   $result->option_id = $answer;
+               if(is_array($answer) && count($answer) > 0){
+                   foreach ($answer as $item){
+                       $result = new Answers();
+                       $result->uuid = $uuid;
+                       $result->question_id = $question_id;
+                       if(is_numeric($item)){
+                           $result->option_id = $item;
+                       }else{
+                           $result->option_text = $item;
+                       }
+                       $result->status = 1;
+                       $result->created_at = $created_at;
+                       $result->save();
+                   }
                }else{
-                   $result->option_text = $answer;
+                   $result = new Answers();
+                   $result->uuid = $uuid;
+                   $result->question_id = $question_id;
+                   if(is_numeric($answer)){
+                       $result->option_id = $answer;
+                   }else{
+                       $result->option_text = $answer;
+                   }
+                   $result->status = 1;
+                   $result->created_at = $created_at;
+                   $result->save();
                }
-               $result->status = 1;
-               $result->save();
            }
            return $this->redirect(['/site/thank-you']);
         } else {

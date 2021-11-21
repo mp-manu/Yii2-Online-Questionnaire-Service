@@ -30,6 +30,9 @@ use yii\bootstrap4\ActiveForm;
                     case 4:
                         echo $form->field($model, 'option_id['.$question['id'].']')->textarea(['rows' => 6])->label(false);
                         break;
+                    case 5:
+                        echo $form->field($model, 'option_id['.$question['id'].']')->checkboxList(\yii\helpers\ArrayHelper::map($question['options'], 'id', 'value'))->label(false);
+                        break;
                     default:
                         break;
                 }

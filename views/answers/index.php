@@ -22,10 +22,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'uuid',
+                'header' => 'Результаты',
+                'attribute' => 'created_at',
                 'format' => 'html',
                 'value' => function($model){
-                    return Html::a($model->uuid, \yii\helpers\Url::to('answers/view/'.$model->uuid), ['target' => '_blank']);
+                    return Html::a($model->created_at, \yii\helpers\Url::to('/answers/view/'.$model->uuid), ['target' => '_blank']);
                 }
 
             ],

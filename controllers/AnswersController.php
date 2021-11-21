@@ -56,11 +56,11 @@ class AnswersController extends Controller
      */
     public function actionView($uuid)
     {
-        $answer = Answers::find()->where(['uuid' => $uuid])
+        $answer = Answers::find()->select('*, group_concat(option_id) as multipleAnswers')->where(['uuid' => $uuid])
             ->indexBy('question_id')
             ->asArray()
+            ->groupBy('question_id')
             ->all();
-
         if(!empty($answer)){
             $questions = Question::find()
                 ->with('options')

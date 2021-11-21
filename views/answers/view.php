@@ -43,12 +43,16 @@ $cyr = array('А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', '
     $i = 0;
     foreach ($questions as $question_key => $question): $i++; ?>
         <p><b><?= $i . '. ' . $question['lable'] ?></b></p>
-        <?php if (!empty($question['options']) && count($question['options']) > 0): ?>
         <?php
+
+        if (!empty($question['options']) && count($question['options']) > 0):
             $k = 0;
             foreach($question['options'] as $option):
                 $choosed = (!empty($answer[$question['id']]) &&  $answer[$question['id']]['option_id'] == $option['id']) ? 'choosed' : '';
-    ?>
+                if($question['type'] == 5 && $multipleAnswers = explode(',', $answer[$question['id']]['multipleAnswers'])){
+                    $choosed = (count($multipleAnswers) >= 1 && in_array($option['id'], $multipleAnswers)) ? 'choosed' : '';
+                }
+            ?>
                 <p class="<?= $choosed ?>"><?= $cyr[$k] . ') ' . $option['value'] ?></p>
                 <?php $k++; endforeach; ?>
         <?php endif; ?>

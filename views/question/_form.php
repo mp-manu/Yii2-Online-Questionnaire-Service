@@ -14,7 +14,7 @@ use yii\bootstrap4\ActiveForm;
 
     <?= $form->field($model, 'lable')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'type')->dropDownList(['1' => 'Да/Нет', '2' => 'Варианты', '3' => 'Короткий текст', '4' => 'Длинный текст']) ?>
+    <?= $form->field($model, 'type')->dropDownList(['1' => 'Да/Нет', '2' => 'Варианты', '3' => 'Короткий текст', '4' => 'Длинный текст', '5' => 'Различные варианты']) ?>
 
     <?= $form->field($model, 'status')->dropDownList(['1' => 'Активный', '0' => 'Отключен']) ?>
 
