@@ -116,5 +116,13 @@ page[size="A4"] {
     text-align: justify;
     text-indent: 1.5cm;
 }
-
+.other_text_input{
+    float: right;
+    max-width: 85%;
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    margin-top: -40px;
+    border-bottom-color: grey;
+}
 

@@ -72,6 +72,9 @@ class AnketaController extends Controller
                        }else{
                            $result->option_text = $item;
                        }
+                       if(!empty(\Yii::$app->request->post('other_text')[$question_id])){
+                           $result->option_text = \Yii::$app->request->post('other_text')[$question_id];
+                       }
                        $result->status = 1;
                        $result->created_at = $created_at;
                        $result->save();
@@ -86,6 +89,9 @@ class AnketaController extends Controller
                        $result->option_text = $answer;
                    }
                    $result->status = 1;
+                   if(!empty(\Yii::$app->request->post('other_text')[$question_id])){
+                       $result->option_text = \Yii::$app->request->post('other_text')[$question_id];
+                   }
                    $result->created_at = $created_at;
                    $result->save();
                }
